@@ -1,0 +1,20 @@
+Start login app
+
+Binary::
+    Mac run ./login
+    Window64 run login64.exe
+    Window32 run login32.exe
+
+    access via: http://localhost:7272
+
+SeleniumLibrary Keywords
+    http://localhost:7272/SeleniumLibrary.html
+
+
+Python
+    >python server.py start
+
+    access via: http://localhost:7272/html
+
+SeleniumLibrary Keywords
+    http://localhost:7272/html/SeleniumLibrary.html

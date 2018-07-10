@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180710 11:17:58.465" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\BAAC\Desktop\robot-datecal\robot\datecal.robot" id="s1" name="Datecal">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180710 11:17:58.638" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/web/'.</msg>
+<status status="PASS" endtime="20180710 11:18:04.299" starttime="20180710 11:17:58.638"></status>
+</kw>
+<test id="s1-t1" name="Calculate date Success">
+<kw type="setup" name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.302" level="INFO">Opening url 'http://localhost:3000/web/'</msg>
+<status status="PASS" endtime="20180710 11:18:04.482" starttime="20180710 11:18:04.301"></status>
+</kw>
+<kw name="กรอกข้อมูลเพื่อคำนวณ Duration" library="resource">
+<arguments>
+<arg>30</arg>
+<arg>11</arg>
+<arg>1984</arg>
+<arg>10</arg>
+<arg>7</arg>
+<arg>2018</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>startDay</arg>
+<arg>${STARTDATE}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.484" level="INFO">Typing text '30' into text field 'startDay'.</msg>
+<status status="PASS" endtime="20180710 11:18:04.589" starttime="20180710 11:18:04.484"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>startMonth</arg>
+<arg>${STARTMONTH}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.589" level="INFO">Typing text '11' into text field 'startMonth'.</msg>
+<status status="PASS" endtime="20180710 11:18:04.695" starttime="20180710 11:18:04.589"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>startYear</arg>
+<arg>${STARTYEAR}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.695" level="INFO">Typing text '1984' into text field 'startYear'.</msg>
+<status status="PASS" endtime="20180710 11:18:04.804" starttime="20180710 11:18:04.695"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>endDay</arg>
+<arg>${ENDDATE}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.804" level="INFO">Typing text '10' into text field 'endDay'.</msg>
+<status status="PASS" endtime="20180710 11:18:04.904" starttime="20180710 11:18:04.804"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>endMonth</arg>
+<arg>${ENDMONTH}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:04.904" level="INFO">Typing text '7' into text field 'endMonth'.</msg>
+<status status="PASS" endtime="20180710 11:18:05.000" starttime="20180710 11:18:04.904"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>endYear</arg>
+<arg>${ENDYEAR}</arg>
+</arguments>
+<msg timestamp="20180710 11:18:05.001" level="INFO">Typing text '2018' into text field 'endYear'.</msg>
+<status status="PASS" endtime="20180710 11:18:05.107" starttime="20180710 11:18:05.001"></status>
+</kw>
+<status status="PASS" endtime="20180710 11:18:05.107" starttime="20180710 11:18:04.483"></status>
+</kw>
+<kw name="กดปุ่มเพื่อคำนวณ" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>calculate</arg>
+</arguments>
+<msg timestamp="20180710 11:18:05.108" level="INFO">Clicking button 'calculate'.</msg>
+<status status="PASS" endtime="20180710 11:18:05.237" starttime="20180710 11:18:05.108"></status>
+</kw>
+<status status="PASS" endtime="20180710 11:18:05.238" starttime="20180710 11:18:05.107"></status>
+</kw>
+<kw name="ตรวจสอบผลการคำนวณ" library="resource">
+<arguments>
+<arg>12276 days</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${RESULTDAY}</arg>
+</arguments>
+<status status="PASS" endtime="20180710 11:18:05.263" starttime="20180710 11:18:05.239"></status>
+</kw>
+<status status="PASS" endtime="20180710 11:18:05.264" starttime="20180710 11:18:05.238"></status>
+</kw>
+<status status="PASS" endtime="20180710 11:18:05.264" critical="yes" starttime="20180710 11:18:04.300"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180710 11:18:07.459" starttime="20180710 11:18:05.267"></status>
+</kw>
+<status status="PASS" endtime="20180710 11:18:07.459" starttime="20180710 11:17:58.465"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Datecal" pass="1">Datecal</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
